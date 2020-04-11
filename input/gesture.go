@@ -1,7 +1,7 @@
 package input
 
 import (
-	"github.com/kunaldawn/goandroid/geometry"
+	"github.com/jkulvich/goandroid/geometry"
 	"time"
 )
 

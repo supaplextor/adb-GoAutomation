@@ -2,8 +2,8 @@ package input
 
 import (
 	"errors"
-	"github.com/kunaldawn/goandroid/device"
-	"github.com/kunaldawn/goandroid/display"
+	"github.com/jkulvich/goandroid/device"
+	"github.com/jkulvich/goandroid/display"
 	"strconv"
 	"strings"
 )
