@@ -1,7 +1,7 @@
 package input
 
 import (
-	"github.com/jkulvich/goandroid/device"
+	"github.com/supaplextor/adb-GoAutomation/device"
 )
 
 // InputManager struct holds all type of supported device input interfaces

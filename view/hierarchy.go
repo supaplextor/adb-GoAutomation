@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"github.com/jkulvich/goandroid/geometry"
+	"github.com/supaplextor/adb-GoAutomation/geometry"
 	"strconv"
 	"strings"
 )

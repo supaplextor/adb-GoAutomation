@@ -3,7 +3,7 @@ package device
 import (
 	"errors"
 	"fmt"
-	"github.com/jkulvich/goandroid/adbutility"
+	"github.com/supaplextor/adb-GoAutomation/adbutility"
 	"strings"
 	"time"
 )
