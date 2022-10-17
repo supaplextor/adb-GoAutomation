@@ -2,13 +2,13 @@
 
 goandroid
 =========
-[![Project Status](http://stillmaintained.com/jkulvich/goandroid.png)](https://stillmaintained.com/jkulvich/goandroid) [![Build Status](http://img.shields.io/travis/jkulvich/goandroid.svg?style=flat-square)](https://travis-ci.org/jkulvich/goandroid) [![Coverage Status](http://img.shields.io/coveralls/jkulvich/goandroid.svg?style=flat-square)](https://coveralls.io/r/jkulvich/goandroid) [![Issues](http://img.shields.io/github/issues/jkulvich/goandroid.svg?style=flat-square)](https://github.com/jkulvich/goandroid/issues) [![Documentation](http://img.shields.io/badge/go-Documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/jkulvich/goandroid) [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/jkulvich/goandroid/blob/master/LICENSE)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/jkulvich/goandroid/blob/master/LICENSE)
 
 Introduction
 ------------
-**"goandroid" is an Android automation library purely written in GO.**
+**"adb-GoAutomation" is an Android automation library purely written in GO.**
 
-**Project Status :** Under Development, not yet ready for v1.0 release.
+**Project Status :** Under the MIT licence, I have adopted this to play around with. - https://github.com/supaplextor
 
 Whether you are an android developer and want to do some automation tasks on your android device to reduce some manual human work, or an enthusiastic developer who want to do some automation taks on your android device, this library allows you to write automation code and do cool stuffs on your android device.
 
@@ -61,7 +61,9 @@ export PATH=$PATH:$PWD/platform-tools
 ```
 
 ### Initialize Android device instance
-First import "github.com/jkulvich/goandroid" in your source, and you are ready to write some cool automation code. To interact with an android device, you need to create an android device instance first. Following example shows how to create a new android device instance and enable "Show CPU Usage" settings using automation. Please locate the documentation for package [goandroid](https://godoc.org/github.com/jkulvich/goandroid) for more information.
+First import "github.com/supaplextor/adb-GoAutomation" in your source, and you are ready to write some cool automation code. To interact with an android device, you need to create an android device instance first. Following example shows how to create a new android device instance and enable "Show CPU Usage" settings using automation. 
+
+-- legacy: Please locate the documentation for package [goandroid](https://godoc.org/github.com/jkulvich/goandroid) for more information.
 
 **Example:**
 
