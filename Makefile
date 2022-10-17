@@ -8,7 +8,6 @@ all: build run
 build:
 	make build-one GOOS=linux GOARCH=amd64
 init:
-	test [ -d "releases/" ] || mkdir releases/
 	go mod init ${APP}/v2
 	go mod tidy || true
 	# go mod download
@@ -55,11 +54,8 @@ build-more:
 	make build-one GOOS=openbsd GOARCH=amd64 || true
 	make build-one GOOS=openbsd GOARCH=arm || true
 clean:
-	rm -f ${RELEASEDIR}${APP}-* diag.log diag.err go.sum go.mod
+	rm -f ${RELEASEDIR}${APP}-* go.sum go.mod
 	go clean
-rundiag:
-	diagslave -m tcp -p 5020 2>>diag.err >>diag.log &
-run: rundiag
-	sleep 1
+# on dev env:
+run:
 	./${RELEASEDIR}${APP}-linux-amd64
-	killall diagslave
