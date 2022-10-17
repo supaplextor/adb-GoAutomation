@@ -9,12 +9,13 @@ build:
 	make build-one GOOS=linux GOARCH=amd64
 build-one:
 	go build
-	make -C sample-apps/demo/ clean init build-one
+	make -C sample-apps/demo/ build-one
 init:
 	go mod init ${APP}/v2
 	go mod tidy || true
 	# go mod download
 	go get
+	make -C sample-apps/demo/ init
 onetime:
 	go run .
 build-release: build
