@@ -3,7 +3,7 @@ package display
 import (
 	"errors"
 	"fmt"
-	"github.com/jkulvich/goandroid/device"
+	"github.com/supaplextor/adb-GoAutomation/device"
 	"strconv"
 	"strings"
 )

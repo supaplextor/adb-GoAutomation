@@ -1,12 +1,12 @@
-package goandroid
+package adb-GoAutomation
 
 import (
-	"github.com/jkulvich/goandroid/activity"
-	"github.com/jkulvich/goandroid/adbutility"
-	"github.com/jkulvich/goandroid/device"
-	"github.com/jkulvich/goandroid/display"
-	"github.com/jkulvich/goandroid/input"
-	"github.com/jkulvich/goandroid/view"
+	"github.com/supaplextor/adb-GoAutomation/activity"
+	"github.com/supaplextor/adb-GoAutomation/adbutility"
+	"github.com/supaplextor/adb-GoAutomation/device"
+	"github.com/supaplextor/adb-GoAutomation/display"
+	"github.com/supaplextor/adb-GoAutomation/input"
+	"github.com/supaplextor/adb-GoAutomation/view"
 )
 
 // AndroidManager struct defines a android device manager with an associated

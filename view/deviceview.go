@@ -6,9 +6,9 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"github.com/jkulvich/goandroid/device"
-	"github.com/jkulvich/goandroid/display"
-	"github.com/jkulvich/goandroid/input"
+	"github.com/supaplextor/adb-GoAutomation/device"
+	"github.com/supaplextor/adb-GoAutomation/display"
+	"github.com/supaplextor/adb-GoAutomation/input"
 	"strings"
 )
 
