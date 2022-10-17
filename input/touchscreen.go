@@ -2,8 +2,8 @@ package input
 
 import (
 	"errors"
-	"github.com/supaplextor/adb-GoAutomation/device"
-	"github.com/supaplextor/adb-GoAutomation/display"
+	"github.com/supaplextor/adbGoAutomation/device"
+	"github.com/supaplextor/adbGoAutomation/display"
 	"strconv"
 	"strings"
 )

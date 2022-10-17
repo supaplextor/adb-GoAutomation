@@ -3,7 +3,7 @@ package activity
 import (
 	"errors"
 	"fmt"
-	"github.com/supaplextor/adb-GoAutomation/device"
+	"github.com/supaplextor/adbGoAutomation/device"
 	"strings"
 	"time"
 )

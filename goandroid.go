@@ -1,12 +1,12 @@
-package adb-GoAutomation
+package adbGoAutomation
 
 import (
-	"github.com/supaplextor/adb-GoAutomation/activity"
-	"github.com/supaplextor/adb-GoAutomation/adbutility"
-	"github.com/supaplextor/adb-GoAutomation/device"
-	"github.com/supaplextor/adb-GoAutomation/display"
-	"github.com/supaplextor/adb-GoAutomation/input"
-	"github.com/supaplextor/adb-GoAutomation/view"
+	"github.com/supaplextor/adbGoAutomation/activity"
+	"github.com/supaplextor/adbGoAutomation/adbutility"
+	"github.com/supaplextor/adbGoAutomation/device"
+	"github.com/supaplextor/adbGoAutomation/display"
+	"github.com/supaplextor/adbGoAutomation/input"
+	"github.com/supaplextor/adbGoAutomation/view"
 )
 
 // AndroidManager struct defines a android device manager with an associated
