@@ -4,11 +4,12 @@ APP=adbGoAutomator
 # Safer if not empty. (watch out in make clean)
 RELEASEDIR=releases/
 
-all: build run
+all: build
 build:
 	make build-one GOOS=linux GOARCH=amd64
 build-one:
 	go build
+	make -C sample-apps/demo/ clean init build-one
 init:
 	go mod init ${APP}/v2
 	go mod tidy || true
@@ -50,6 +51,7 @@ build-more:
 clean:
 	rm -f ${RELEASEDIR}${APP}-* go.sum go.mod
 	go clean
+	make -C sample-apps/demo/ clean
 # on dev env:
 run:
 	./${RELEASEDIR}${APP}-linux-amd64

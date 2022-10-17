@@ -2,7 +2,7 @@
 
 goandroid
 =========
-[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/jkulvich/goandroid/blob/master/LICENSE)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/supaplextor/adbGoAutomation/blob/master/LICENSE)
 
 Introduction
 ------------
@@ -73,7 +73,7 @@ First import "github.com/supaplextor/adbGoAutomation" in your source, and you ar
 package main
 
 import (
-	"github.com/jkulvich/goandroid"
+	"github.com/supaplextor/adbGoAutomation"
 )
 
 func main() {

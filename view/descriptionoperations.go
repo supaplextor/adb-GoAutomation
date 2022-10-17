@@ -134,7 +134,7 @@ func (devView DeviceView) ScrollDownToDescription(description string, index int,
 		}
 		devView.im.TouchScreen.SwipeUp(1)
 	}
-	return errors.New(fmt.Sprintf("Description [$s] not found after scrolling down [%d] times ", description, maxscroll))
+	return errors.New(fmt.Sprintf("Description [%s] not found after scrolling down [%d] times ", description, maxscroll))
 }
 
 func (devView DeviceView) ScrollUpToDescription(description string, index int, maxscroll int) error {
@@ -145,7 +145,7 @@ func (devView DeviceView) ScrollUpToDescription(description string, index int, m
 		}
 		devView.im.TouchScreen.SwipeDown(1)
 	}
-	return errors.New(fmt.Sprintf("Description [$s] not found after scrolling up [%d] times ", description, maxscroll))
+	return errors.New(fmt.Sprintf("Description [%s] not found after scrolling up [%d] times ", description, maxscroll))
 }
 
 func (devView DeviceView) ScrollDownToMatchingDescription(description string, index int, maxscroll int) error {
@@ -156,7 +156,7 @@ func (devView DeviceView) ScrollDownToMatchingDescription(description string, in
 		}
 		devView.im.TouchScreen.SwipeUp(1)
 	}
-	return errors.New(fmt.Sprintf("Matching description [$s] not found after scrolling down [%d] times ", description, maxscroll))
+	return errors.New(fmt.Sprintf("Matching description [%s] not found after scrolling down [%d] times ", description, maxscroll))
 }
 
 func (devView DeviceView) ScrollUpToMatchingDescription(description string, index int, maxscroll int) error {
@@ -167,7 +167,7 @@ func (devView DeviceView) ScrollUpToMatchingDescription(description string, inde
 		}
 		devView.im.TouchScreen.SwipeDown(1)
 	}
-	return errors.New(fmt.Sprintf("Matching description [$s] not found after scrolling up [%d] times ", description, maxscroll))
+	return errors.New(fmt.Sprintf("Matching description [%s] not found after scrolling up [%d] times ", description, maxscroll))
 }
 
 func (devView DeviceView) GetDescriptionForText(text string, index int, timeout int) (string, error) {
