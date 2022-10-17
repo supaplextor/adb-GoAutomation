@@ -3,7 +3,7 @@ package display
 import (
 	"errors"
 	"fmt"
-	"github.com/supaplextor/adb-GoAutomation/device"
+	"github.com/supaplextor/adbGoAutomation/device"
 	"strconv"
 	"strings"
 )

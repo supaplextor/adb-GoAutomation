@@ -1,7 +1,7 @@
 package input
 
 import (
-	"github.com/supaplextor/adb-GoAutomation/device"
+	"github.com/supaplextor/adbGoAutomation/device"
 	"strconv"
 )
 

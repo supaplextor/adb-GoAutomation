@@ -6,7 +6,7 @@
 package view
 
 import (
-	"github.com/supaplextor/adb-GoAutomation/geometry"
+	"github.com/supaplextor/adbGoAutomation/geometry"
 	"strings"
 )
 

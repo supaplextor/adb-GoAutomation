@@ -1,7 +1,7 @@
 package input
 
 import (
-	"github.com/supaplextor/adb-GoAutomation/geometry"
+	"github.com/supaplextor/adbGoAutomation/geometry"
 	"time"
 )
 
