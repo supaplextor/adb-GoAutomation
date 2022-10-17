@@ -26,6 +26,8 @@ _testmain.go
 .idea/
 go.mod
 go.sum
-releases/adbGoAutomator*
-sample-apps/demo/go.mod sample-apps/demo/go.sum
+releases
+sample-apps/demo/go.mod
+sample-apps/demo/go.sum
 sample-apps/demo/demo
+sample-apps/demo/releases

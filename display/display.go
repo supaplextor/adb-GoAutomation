@@ -25,7 +25,7 @@ func (disp Display) GetDisplaySize() (int, int, error) {
 	if !strings.Contains(txt, "Physical size:") {
 		return -1, -1, errors.New("not able to determine display size")
 	}
-	size := strings.Split(strings.TrimSpace(txt), "Physical size:")[1]
+	size := strings.Split(strings.Trim(txt, " \n\t\r"), "Physical size:")[1]
 	//	size := strings.Split(strings.TrimSpace(size), "Physical size:")[1]
 	width, err := strconv.Atoi(strings.Split(strings.TrimSpace(size), "x")[0])
 	if err != nil {

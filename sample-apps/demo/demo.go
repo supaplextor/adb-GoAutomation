@@ -10,6 +10,7 @@ func main() {
 	// Create a new android manager with 60 seconds adb time out and
 	// take adb executable path from system path.
 	android_manager := goandroid.GetNewAndroidManager(60, "adb")
+	android_manager.Endpoint.Debug = true
 
 	// Use the sn from '$ adb devices' on the shell.
 	// Create an android device instance with following serial
@@ -19,11 +20,12 @@ func main() {
 	if nil != err {
 		log.Printf("android.Display.GetDisplaySize() = %d %d %v\n", x, y, err)
 	}
+	log.Printf("x=%d y=%d\n", x, y)
 
 	// Start settings activity
 	err = android.Activity.StartActivity("com.android.settings")
 	if nil != err {
-		log.Panicf("android.Activity.StartActivity(...) = %v\n", err)
+		log.Printf("android.Activity.StartActivity(...) = %v\n", err)
 	}
 	// Wait for settings activity to get focused and displayed on screen
 	// with 10 seconds timeout
