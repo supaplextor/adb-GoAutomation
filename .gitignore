@@ -26,4 +26,4 @@ _testmain.go
 .idea/
 go.mod
 go.sum
-releases/adb-GoAutomator*
+releases/adbGoAutomator*

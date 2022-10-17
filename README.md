@@ -6,7 +6,7 @@ goandroid
 
 Introduction
 ------------
-**"adb-GoAutomation" is an Android automation library purely written in GO.**
+**"adbGoAutomation" is an Android automation library purely written in GO.**
 
 **Project Status :** Under the MIT licence, I have adopted this to play around with. - https://github.com/supaplextor
 
@@ -61,7 +61,7 @@ export PATH=$PATH:$PWD/platform-tools
 ```
 
 ### Initialize Android device instance
-First import "github.com/supaplextor/adb-GoAutomation" in your source, and you are ready to write some cool automation code. To interact with an android device, you need to create an android device instance first. Following example shows how to create a new android device instance and enable "Show CPU Usage" settings using automation. 
+First import "github.com/supaplextor/adbGoAutomation" in your source, and you are ready to write some cool automation code. To interact with an android device, you need to create an android device instance first. Following example shows how to create a new android device instance and enable "Show CPU Usage" settings using automation. 
 
 -- legacy: Please locate the documentation for package [goandroid](https://godoc.org/github.com/jkulvich/goandroid) for more information.
 
