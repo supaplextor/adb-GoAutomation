@@ -7,6 +7,8 @@ RELEASEDIR=releases/
 all: build run
 build:
 	make build-one GOOS=linux GOARCH=amd64
+build-one:
+	go build
 init:
 	go mod init ${APP}/v2
 	go mod tidy || true
@@ -14,14 +16,6 @@ init:
 	go get
 onetime:
 	go run .
-build-one:
-	go build -o ${RELEASEDIR}${APP}-${GOOS}-${GOARCH}${dotEXE}
-	test "windows" = "${GOOS}" && make release-windows || echo release-windows ${GOOS}
-	test "windows" != "${GOOS}" && make release-most || echo release-most ${GOOS}
-release-most:
-	tar -C ${RELEASEDIR} -cvf ${RELEASEDIR}${APP}-${GOOS}-${GOARCH}.tar.bz2 ${APP}-${GOOS}-${GOARCH} ../README.md ../netmetering.sql ../vendor.env
-release-windows:
-	zip -j ${RELEASEDIR}${APP}-${GOOS}-${GOARCH}.zip ${RELEASEDIR}${APP}-${GOOS}-${GOARCH}${dotEXE} README.md *.sql vendor.env
 build-release: build
 	make build-one GOOS=darwin GOARCH=amd64
 	make build-one GOOS=linux GOARCH=386
