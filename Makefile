@@ -1,6 +1,6 @@
 GOPATH=${HOME}/go:/usr/share/gocode
 # Safer if not lowercase. Use CamelCase. (watch out in make clean)
-APP=adb-GoAutomator
+APP=adbGoAutomator
 # Safer if not empty. (watch out in make clean)
 RELEASEDIR=releases/
 
