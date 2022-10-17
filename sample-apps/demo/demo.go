@@ -31,7 +31,8 @@ func main() {
 	// with 10 seconds timeout
 	err = android.Activity.WaitForActivityToFocus("com.android.settings", 10)
 	if nil != err {
-		log.Panicf("android.Activity.WaitForActivityToFocus(...) = %v\n", err)
+		log.Printf("android.Activity.WaitForActivityToFocus(...) = %v\n", err)
+		log.Printf("open/switch to Settings aka com.android.settings.\n")
 	}
 
 	// Scroll down to "About phone"

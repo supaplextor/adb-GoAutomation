@@ -32,9 +32,6 @@ func (disp Display) GetDisplaySize() (int, int, error) {
 		return -1, -1, err
 	}
 	height, err := strconv.Atoi(strings.Split(strings.TrimSpace(size), "x")[1])
-	if height == 0 {
-		height = 3200 // FIXME BUG TODO
-	}
 	if err != nil {
 		return -1, -1, err
 	}
