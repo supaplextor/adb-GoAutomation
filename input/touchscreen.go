@@ -2,10 +2,11 @@ package input
 
 import (
 	"errors"
-	"github.com/supaplextor/adbGoAutomation/device"
-	"github.com/supaplextor/adbGoAutomation/display"
 	"strconv"
 	"strings"
+
+	"github.com/supaplextor/adbGoAutomation/device"
+	"github.com/supaplextor/adbGoAutomation/display"
 )
 
 // TouchScreen struct represensts touch input susbystem for associated device.
@@ -150,7 +151,7 @@ func (ts TouchScreen) GetTouchInputDevice() (string, error) {
 			tag2_match = false
 			parts := strings.Split(line, ":")
 			if len(parts) != 2 {
-				return "", errors.New("Unable to parse device information")
+				return "", errors.New("unable to parse device information")
 			}
 			currentDevice = strings.TrimSpace(parts[1])
 			continue
@@ -170,5 +171,5 @@ func (ts TouchScreen) GetTouchInputDevice() (string, error) {
 			return currentDevice, nil
 		}
 	}
-	return "", errors.New("Unable to determine touch device")
+	return "", errors.New("unable to determine touch device")
 }
