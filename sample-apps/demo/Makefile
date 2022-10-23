@@ -1,4 +1,4 @@
-GOPATH=../..:${HOME}/go:/usr/share/gocode
+GOPATH=${HOME}/usr/src::${HOME}/go:/usr/share/gocode
 # Safer if not lowercase. Use CamelCase. (watch out in make clean)
 APP=demo-adbGoAutomation
 # Safer if not empty. (watch out in make clean)
