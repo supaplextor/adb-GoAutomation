@@ -8,7 +8,7 @@ all: build
 build:
 	make build-one GOOS=linux GOARCH=amd64
 build-one:
-	go build
+	#go build
 	make -C sample-apps/demo/ build-one
 init:
 	go mod init ${APP}/v2
@@ -20,10 +20,10 @@ onetime:
 	go run .
 build-release: build
 	make build-one GOOS=darwin GOARCH=amd64
-	make build-one GOOS=linux GOARCH=386
-	make build-one GOOS=windows GOARCH=386 dotEXE=.exe
 	make build-one GOOS=windows GOARCH=amd64 dotEXE=.exe
 build-more:
+	make build-one GOOS=windows GOARCH=386 dotEXE=.exe
+	make build-one GOOS=linux GOARCH=386
 	make build-one GOOS=android GOARCH=arm || true
 	make build-one GOOS=darwin GOARCH=386 || true
 	make build-one GOOS=darwin GOARCH=arm || true
