@@ -1,15 +1,14 @@
 GOPATH=${HOME}/go:/usr/share/gocode
 # Safer if not lowercase. Use CamelCase. (watch out in make clean)
-APP=demo
+APP=demo-adbGoAutomation
 # Safer if not empty. (watch out in make clean)
 RELEASEDIR=releases/
 
 all: build
 build:
-	make build-one 
-#	GOOS=linux GOARCH=amd64
+	make build-one 	GOOS=linux GOARCH=amd64
 build-one:
-	go build -o ${RELEASEDIR}demo-${GOOS}-${GOARCH}
+	go build -o ${RELEASEDIR}${APP}-${GOOS}-${GOARCH}
 init:
 	go mod init ${APP}/v2
 	go mod tidy || true
@@ -18,5 +17,5 @@ init:
 onetime:
 	go run .
 clean:
-	rm -f releases/demo-* go.sum go.mod
+	rm -f releases/${APP}-* go.sum go.mod
 	go clean

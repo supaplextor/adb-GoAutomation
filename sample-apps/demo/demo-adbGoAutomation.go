@@ -2,11 +2,56 @@ package main
 
 import (
 	"log"
+	"os"
 
+	viper "github.com/spf13/viper"
 	goandroid "github.com/supaplextor/adbGoAutomation"
 )
 
+var (
+	defaults = map[string]interface{}{
+		"Sql_driver": "postgres",
+		"Sql_open":   "host=localhost dbname= user= password=YESPLEASE",
+		"Verbose":    true,
+	}
+	configName  = "adbGoAutomation"
+	configPaths = []string{
+		"/home/" + os.Getenv("HOME") + "/.config/adbGoAutomation",
+		"/usr/local/etc/adbGoAutomation",
+		".",
+	}
+)
+
+type Config struct {
+	Sql_driver string
+	Sql_open   string
+	Verbose    bool
+	DeviceSN   string
+}
+
+var config Config
+
+func ViperInit(c *Config) {
+	viper.New()
+	for k, v := range defaults {
+		viper.SetDefault(k, v)
+	}
+	viper.SetConfigName(configName)
+	for _, p := range configPaths {
+		viper.AddConfigPath(p)
+	}
+	err := viper.ReadInConfig()
+	if err != nil {
+		log.Fatalf("could not read config file: %v", err)
+	}
+	err = viper.Unmarshal(&c)
+	if err != nil {
+		log.Fatalf("cannot decode config into struct: %v", err)
+	}
+}
+
 func main() {
+	ViperInit(&config)
 	// Create a new android manager with 60 seconds adb time out and
 	// take adb executable path from system path.
 	android_manager := goandroid.GetNewAndroidManager(60, "adb")
@@ -14,10 +59,11 @@ func main() {
 
 	// Use the sn from '$ adb devices' on the shell.
 	// Create an android device instance with following serial
-	android := android_manager.GetNewAndroidDevice("R9PN711W1ZJ")
+	android := android_manager.GetNewAndroidDevice(config.DeviceSN)
 
 	x, y, err := android.Display.GetDisplaySize()
 	if nil != err {
+		// 2022/10/22 21:30:11 android.Display.GetDisplaySize() = -1 -1 strconv.Atoi: parsing "3088\nOverride size: 1080": invalid syntax
 		log.Printf("android.Display.GetDisplaySize() = %d %d %v\n", x, y, err)
 	}
 	log.Printf("x=%d y=%d\n", x, y)
