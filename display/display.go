@@ -22,7 +22,7 @@ func (disp Display) GetDisplaySize() (int, int, error) {
 	if err != nil {
 		return -1, -1, err
 	}
-	var sizes []string = strings.Split(strings.Split(txt, 0x0A)[0], " ")
+	var sizes []string = strings.Split(strings.Split(txt, char(0x0A)[0], " ")
 
 	if !strings.Contains(txt, "size:") {
 		return -1, -1, errors.New("not able to determine display size")
