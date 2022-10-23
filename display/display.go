@@ -3,7 +3,6 @@ package display
 import (
 	"errors"
 	"fmt"
-	"log"
 	"strconv"
 	"strings"
 
@@ -20,21 +19,24 @@ func NewDisplay(dev device.Device) Display {
 
 func (disp Display) GetDisplaySize() (int, int, error) {
 	txt, err := disp.dev.Shell("wm", "size")
-	log.Printf("wm size: %v", txt)
 	if err != nil {
 		return -1, -1, err
 	}
+	//fmt.Printf("wm size: %v", txt)
+	//fmt.Println()
+
+	var sizes []string = strings.Split(strings.Split(txt, "size:")[1], "\r\n")
+	//fmt.Printf("[]string sizes == %v", sizes)
+	//fmt.Println()
+
 	if !strings.Contains(txt, "size:") {
 		return -1, -1, errors.New("not able to determine display size")
 	}
-	size := strings.Split(strings.Trim(txt, ":\r\n"), "size:")[1]
-	log.Printf("size: %v", size)
-	//	size := strings.Split(strings.TrimSpace(size), "Physical size:")[1]
-	width, err := strconv.Atoi(strings.Split(strings.TrimSpace(size), "x")[0])
+	width, err := strconv.Atoi(strings.Split(strings.TrimSpace(sizes[0]), "x")[0])
 	if err != nil {
 		return -1, -1, err
 	}
-	height, err := strconv.Atoi(strings.Split(strings.TrimSpace(size), "x")[1])
+	height, err := strconv.Atoi(strings.Split(strings.TrimSpace(sizes[0]), "x")[1])
 	if err != nil {
 		return -1, -1, err
 	}
