@@ -24,10 +24,11 @@ func (disp Display) GetDisplaySize() (int, int, error) {
 	if err != nil {
 		return -1, -1, err
 	}
-	if !strings.Contains(txt, "Physical size:") {
+	if !strings.Contains(txt, "size:") {
 		return -1, -1, errors.New("not able to determine display size")
 	}
-	size := strings.Split(strings.Trim(txt, ":\r"), "Physical size:")[1]
+	size := strings.Split(strings.Trim(txt, ":\r\n"), "size:")[1]
+	log.Printf("size: %v", size)
 	//	size := strings.Split(strings.TrimSpace(size), "Physical size:")[1]
 	width, err := strconv.Atoi(strings.Split(strings.TrimSpace(size), "x")[0])
 	if err != nil {
