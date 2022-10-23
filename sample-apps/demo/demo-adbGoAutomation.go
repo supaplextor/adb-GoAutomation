@@ -63,10 +63,10 @@ func main() {
 
 	x, y, err := android.Display.GetDisplaySize()
 	if nil != err {
-		// 2022/10/22 21:30:11 android.Display.GetDisplaySize() = -1 -1 strconv.Atoi: parsing "3088\nOverride size: 1080": invalid syntax
 		log.Printf("android.Display.GetDisplaySize() = %d %d %v\n", x, y, err)
+	} else {
+		log.Printf("x=%d y=%d\n", x, y)
 	}
-	log.Printf("x=%d y=%d\n", x, y)
 
 	// Start settings activity
 	err = android.Activity.StartActivity("com.android.settings")
