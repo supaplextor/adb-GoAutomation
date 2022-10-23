@@ -16,7 +16,7 @@ var (
 	}
 	configName  = "adbGoAutomation"
 	configPaths = []string{
-		"/home/" + os.Getenv("HOME") + "/.config/adbGoAutomation",
+		os.Getenv("HOME") + "/.config/adbGoAutomation",
 		"/usr/local/etc/adbGoAutomation",
 		".",
 	}
